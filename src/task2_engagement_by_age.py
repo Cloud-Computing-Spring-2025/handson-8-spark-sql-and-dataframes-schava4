@@ -7,8 +7,16 @@ spark = SparkSession.builder.appName("EngagementByAgeGroup").getOrCreate()
 posts_df = spark.read.option("header", True).csv("input/posts.csv", inferSchema=True)
 users_df = spark.read.option("header", True).csv("input/users.csv", inferSchema=True)
 
-# TODO: Implement the task here
-
+# Calculate engagement metrics
+engagement_df = (
+    posts_df.join(users_df, "UserID")
+    .groupBy("AgeGroup")
+    .agg(
+        avg("Likes").alias("AvgLikes"),
+        avg("Retweets").alias("AvgRetweets")
+    )
+    .orderBy(col("AvgLikes").desc())
+)
 
 # Save result
 engagement_df.coalesce(1).write.mode("overwrite").csv("outputs/engagement_by_age.csv", header=True)

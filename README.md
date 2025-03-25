@@ -299,27 +299,3 @@ A leaderboard of verified users based on audience engagement.
 
 ---
 
-## **Grading Criteria**
-
-| Task                        | Marks |
-|-----------------------------|-------|
-| Hashtag Trend Analysis      | 1     |
-| Engagement by Age Group     | 1     |
-| Sentiment vs Engagement     | 1     |
-| Top Verified Users by Reach | 1     |
-| **Total**                   | **1** |
-
----
-
-## 📬 Submission Checklist
-
-- [ ] PySpark scripts in the `src/` directory  
-- [ ] Output files in the `outputs/` directory  
-- [ ] Datasets in the `input/` directory  
-- [ ] Completed `README.md`  
-- [ ] Commit everything to GitHub Classroom  
-- [ ] Submit your GitHub repo link on canvas
-
----
-
-Now go uncover the trends behind the tweets 📊🐤✨
